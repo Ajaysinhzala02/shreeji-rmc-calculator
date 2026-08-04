@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rate Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; text-align: center; }
+    .calculator { max-width: 100%; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input, button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 6px; border: 1px solid #ccc; font-size: 16px; box-sizing: border-box; }
+    button { background-color: #007bff; color: white; border: none; font-weight: bold; }
+    .result { font-weight: bold; font-size: 1.3em; color: #28a745; margin-top: 15px; }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <h2>RMC Rate Calculator</h2>
+    <input type="number" id="quantity" placeholder="Quantity (Matra) dalo">
+    <input type="number" id="rate" placeholder="Rate (Dar) dalo">
+    <button onclick="calculateTotal()">Total Calculate Karein</button>
+    <div class="result" id="totalResult">Total: ₹0</div>
+  </div>
+
+  <script>
+    function calculateTotal() {
+      const qty = parseFloat(document.getElementById('quantity').value) || 0;
+      const rate = parseFloat(document.getElementById('rate').value) || 0;
+      const total = qty * rate;
+      document.getElementById('totalResult').innerText = "Total: ₹" + total.toFixed(2);
+    }
+  </script>
+</body>
+</html>
